@@ -1,37 +1,36 @@
 /* eslint-disable */
-import "bootstrap";
-import "./style.css";
+// import "bootstrap";
+// import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
+import { end } from "@popperjs/core";
 
 window.onload = function() {
   //write your code here
   console.log("Hello Rigo from the console!");
+  domainNames();
 };
-let domainExcuse = () => {
-  let pronoun = [" it ", " your ", "his", " her ", " the ", " our"];
-  let adjetive = [" great ", " big ", " good ", " generius "];
-  let action = [" took my ", " eat my ", " trew my ", " bit my "];
-  let object = [" homework ", " toe ", " car ", " shoe "];
-  let where = [" on the stret ", " in my house ", " at the park "];
+let domainNames = () => {
+  let pronoun = ["it", "your", "his", "her", "the", "our"];
+  let adjetive = ["great", "big", "good", "generous", "smart"];
+  let noun = ["student", "airport", "computer", "family"];
+  let endpoint = [".com", ".dev", ".gov", ".edu"];
 
-  let pronounindex = Math.floor(Math.random() * pronoun.length);
-  let subjectindex = Math.floor(Math.random() * subject.length);
-  let actionindex = Math.floor(Math.random() * action.length);
-  let objectindex = Math.floor(Math.random() * object.length);
-  let whereindex = Math.floor(Math.random() * where.length);
+  let div = document.querySelector("#myapp");
+  let domainNamelist = [];
 
-  return (
-    pronoun[pronounindex] +
-    "" +
-    subject[subjectindex] +
-    "" +
-    action[actionindex] +
-    "" +
-    object[objectindex] +
-    "" +
-    where[whereindex] +
-    ""
-  );
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adjetive.length; j++) {
+      for (let k = 0; k < noun.length; k++) {
+        for (let l = 0; l < endpoint.length; l++) {
+          domainNamelist.push(pronoun[i] + adjetive[j] + noun[k] + endpoint[l]);
+          console.log(pronoun[i] + adjetive[j] + noun[k] + endpoint[l]);
+        }
+      }
+    }
+  }
+  for (let i = 0; i < domainNamelist.length; i++) {
+    div.innerHTML += "<p>" + domainNamelist[i] + "</p>";
+  }
 };

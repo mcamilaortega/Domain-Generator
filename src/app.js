@@ -13,7 +13,7 @@ window.onload = function() {
 };
 let domainNames = () => {
   let pronoun = ["it", "your", "his", "her", "the", "our"];
-  let adjetive = ["great", "big", "good", "generous", "smart"];
+  let adjetive = ["great", "big", "good", "generous", "pretty"];
   let noun = ["student", "airport", "computer", "family"];
   let endpoint = [".com", ".dev", ".gov", ".edu"];
 
